@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  go-server:
+    image: gocd/gocd-server:v22.3.0
+    ports:
+      - '8153:8153'
+      - '8154:8154'
+
+  goagent:
+    image: gocd/gocd-agent-docker-dind:v22.3.0
+    links:
+      - go-server
+    environment:
+      GO_SERVER_URL: https://go-server:8154/go
