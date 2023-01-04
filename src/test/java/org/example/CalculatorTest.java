@@ -20,6 +20,6 @@ class CalculatorTest {
     @Test
     void add2Int_3() {
         Calculator calculator = new Calculator();
-        Assertions.assertEquals(4, calculator.add(55, 3));
+        Assertions.assertEquals(4, calculator.add(1, 3));
     }
 }
